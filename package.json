@@ -1,0 +1,26 @@
+{
+  "name": "lepas-kenang-present-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "watch": "npx tailwindcss -i ./views/index.css -o ./public/css/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7",
+    "nodemon": "^3.1.0",
+    "qr-code-styling": "^1.6.0-rc.1",
+    "sequelize": "^6.37.3",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "html5-qrcode": "^2.3.8",
+    "tailwindcss": "^3.4.3"
+  }
+}

@@ -1,0 +1,26 @@
+<%- include('./partials/header'); %>
+<main class="flex flex-col max-w-md justify-center p-6 gap-5 mx-auto">
+  <h1 class="text-3xl font-semibold">Scan The Present QR Code</h1>
+  <div id="render" class="h-fit border border-black max-w-md hidden"></div>
+  <div>
+    <button
+      type="button"
+      id="scan"
+      class="bg-blue-700 rounded-md text-white px-3 py-2"
+    >
+      Scan
+    </button>
+    <button
+      type="button"
+      id="stopScan"
+      class="bg-red-700 rounded-md text-white px-3 py-2"
+    >
+      Stop Scan
+    </button>
+  </div>
+  <div id="result"></div>
+</main>
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+<script type="application/json" src="../config/app.js"></script>
+<script type="module" src="/js/scanner.js"></script>
+<%- include('./partials/footer'); %>

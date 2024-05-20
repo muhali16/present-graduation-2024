@@ -1,0 +1,19 @@
+[req]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_req
+prompt = no
+[req_distinguished_name]
+C = ID
+ST = Jakarta
+L = Jakarta Barat
+O = Sekolah Kak Seto
+OU = Programmer 
+CN = Ali
+[v3_req]
+keyUsage = critical, digitalSignature, keyAgreement
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = www.192.168.0.126.com
+DNS.2 = 192.168.0.126.com
+DNS.3 = 192.168.0.126

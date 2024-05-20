@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+<main class="flex flex-col max-w-md justify-center p-6 gap-5 mx-auto">
+  <h1 class="text-2xl font-bold">Siswa Peserta Lepas Kenang 2024</h1>
+  <table class="table-auto text-md">
+    <thead class="text-center border-t-2 border-b-2 border-black">
+      <td class="p-2">No</td>
+      <td class="p-2 text-left">Name</td>
+      <td class="p-2">Hadir</td>
+    </thead>
+    <tbody>
+      <% let i = 1; students.forEach(student => { %>
+      <tr class="border-b-2">
+        <td class="text-center p-2"><%= i %></td>
+        <td class="p-2">
+          <a
+            href="/students/<%= student.id ?? "#" %>"
+            class="text-blue-900 hover:text-blue-500"
+            ><%= student.nama ?? "Undefined" %></a
+          >
+        </td>
+        <td class="text-center p-2"><%= student.hadir == 1 ? "✅" : "❌" %></td>
+      </tr>
+      <% i++ }); %>
+    </tbody>
+  </table>
+</main>
+<%- include('partials/footer') %>
