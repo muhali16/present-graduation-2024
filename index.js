@@ -27,9 +27,9 @@ app.get("/", async (req, res) => {
   res.render("index", { title: "Home" });
 });
 
-app.get("/scan-present/:id/success", async (req, res) => {
+app.get("/scan-present/:nis/success", async (req, res) => {
   const student = await Student.findOne({
-    where: { id: req.params.id, aktif: 1 },
+    where: { nis: req.params.nis, aktif: 1 },
   });
   io.emit("hadir", student.nama);
   console.log("Hadir: " + student.nama);
