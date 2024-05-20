@@ -5,7 +5,7 @@ const downloadQrButton = document.getElementById("downloadQR");
 const config = {
   width: 200,
   height: 200,
-  data: "/scan-present/" + studendId.value,
+  data: studendId.value,
   margin: 2,
   qrOptions: {
     typeNumber: "0",

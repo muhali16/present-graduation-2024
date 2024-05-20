@@ -11,10 +11,10 @@ router.get("/scan-present", (req, res) => {
   res.render("scanner", { title: "Scan Present" });
 });
 
-router.get("/scan-present/:id", async (req, res) => {
+router.get("/scan-present/:nis", async (req, res) => {
   try {
     const student = await Student.findOne({
-      where: { id: req.params.id, aktif: 1 },
+      where: { nis: req.params.nis, aktif: 1 },
     });
     // console.log(student);
     res.render("present", { title: "Present Data", data: student });
@@ -27,14 +27,14 @@ router.get("/scan-present/:id", async (req, res) => {
 //   res.send("<h1>Success</h1>");
 // });
 
-router.get("/scan-present/:id/present", async (req, res) => {
+router.get("/scan-present/:nis/present", async (req, res) => {
   try {
     const updating = await Student.update(
       { hadir: 1, updatedAt: "NOW()" },
-      { where: { id: req.params.id, aktif: 1 } }
+      { where: { nis: req.params.nis, aktif: 1 } }
     );
     // io.emit("hadir", updating.nama);
-    res.redirect(`/scan-present/${req.params.id}/success`);
+    res.redirect(`/scan-present/${req.params.nis}/success`);
   } catch (error) {
     console.log("Error Update: " + error.message);
   }

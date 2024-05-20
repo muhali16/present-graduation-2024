@@ -13,10 +13,10 @@ router.get("/students", async (req, res) => {
   }
 });
 
-router.get("/students/:id", async (req, res) => {
+router.get("/students/:nis", async (req, res) => {
   try {
     const students = await Student.findOne({
-      where: { id: req.params.id, aktif: 1 },
+      where: { nis: req.params.nis, aktif: 1 },
     });
     res.render("show-student", { title: "Show Students", data: students });
   } catch (error) {
