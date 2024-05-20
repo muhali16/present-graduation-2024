@@ -5,6 +5,7 @@
     <thead class="text-center border-t-2 border-b-2 border-black">
       <td class="p-2">No</td>
       <td class="p-2 text-left">Name</td>
+      <td class="p-2 text-left">NIS</td>
       <td class="p-2">Hadir</td>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
             ><%= student.nama ?? "Undefined" %></a
           >
         </td>
+        <td class="text-center p-2"><%= student.nis %></td>
         <td class="text-center p-2"><%= student.hadir == 1 ? "✅" : "❌" %></td>
       </tr>
       <% i++ }); %>

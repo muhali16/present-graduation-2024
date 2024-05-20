@@ -1,5 +1,4 @@
 const express = require("express");
-const { Sequelize, DataTypes } = require("sequelize");
 const Student = require("../entities/Student");
 
 const router = express.Router();

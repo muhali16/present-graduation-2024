@@ -77,6 +77,7 @@ const config = {
 const qrCode = new QRCodeStyling(config);
 
 qrCode.append(qrCodeCanvas);
+
 downloadQrButton.addEventListener("click", (e) => {
   e.preventDefault();
   qrCode.download({

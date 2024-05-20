@@ -23,14 +23,10 @@ router.get("/scan-present/:nis", async (req, res) => {
   }
 });
 
-// router.get("/scan-present/:id/success", (req, res) => {
-//   res.send("<h1>Success</h1>");
-// });
-
 router.get("/scan-present/:nis/present", async (req, res) => {
   try {
     const updating = await Student.update(
-      { hadir: 1, updatedAt: "NOW()" },
+      { hadir: 1 },
       { where: { nis: req.params.nis, aktif: 1 } }
     );
     // io.emit("hadir", updating.nama);
