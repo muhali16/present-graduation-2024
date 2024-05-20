@@ -4,7 +4,7 @@ const db = require("../config/db");
 const { DataTypes } = Sequelize;
 
 const Student = db.define(
-  "siswa",
+  "siswa_lulus",
   {
     nama: DataTypes.STRING,
     kelas: DataTypes.STRING,
