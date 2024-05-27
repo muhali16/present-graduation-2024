@@ -4,13 +4,9 @@ const unitField = document.getElementById("studentUnit");
 
 const socket = io();
 
-socket.on("hadir.nama", (item) => {
-  namaField.innerText = item;
+socket.on("hadir", (item) => {
+  namaField.innerText = item.nama;
+  classField.innerText = item.kelas;
+  unitField.innerText = item.unit_sekolah;
   namaField.classList.add('animate-bounce')
-});
-socket.on("hadir.kelas", (item) => {
-  classField.innerText = item;
-});
-socket.on("hadir.unit", (item) => {
-  unitField.innerText = item;
 });
