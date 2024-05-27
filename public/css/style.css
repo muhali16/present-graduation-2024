@@ -5,7 +5,7 @@
 @import url('https://fonts.cdnfonts.com/css/mercy-christole');
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /*
@@ -564,21 +564,21 @@ video {
   --tw-contain-style:  ;
 }
 
-.absolute{
-  position: absolute;
+.fixed{
+  position: fixed;
 }
 
 .relative{
   position: relative;
 }
 
-.-z-50{
-  z-index: -50;
-}
-
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+
+.mb-5{
+  margin-bottom: 1.25rem;
 }
 
 .mt-10{
@@ -634,6 +634,10 @@ video {
   table-layout: auto;
 }
 
+.animate-\[wiggle_1s_ease-in-out\]{
+  animation: wiggle 1s ease-in-out;
+}
+
 .flex-col{
   flex-direction: column;
 }
@@ -646,16 +650,20 @@ video {
   justify-content: center;
 }
 
+.gap-10{
+  gap: 2.5rem;
+}
+
 .gap-5{
   gap: 1.25rem;
 }
 
-.gap-8{
-  gap: 2rem;
-}
-
 .rounded-md{
   border-radius: 0.375rem;
+}
+
+.rounded-xl{
+  border-radius: 0.75rem;
 }
 
 .border{
@@ -699,12 +707,26 @@ video {
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 
+.bg-slate-800{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
+.bg-slate-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+
 .bg-cover{
   background-size: cover;
 }
 
 .p-2{
   padding: 0.5rem;
+}
+
+.p-4{
+  padding: 1rem;
 }
 
 .p-6{
@@ -736,8 +758,13 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.pt-10{
-  padding-top: 2.5rem;
+.py-9{
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.pt-5{
+  padding-top: 1.25rem;
 }
 
 .text-left{
@@ -763,19 +790,14 @@ video {
   line-height: 1;
 }
 
+.text-6xl{
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-9xl{
-  font-size: 8rem;
-  line-height: 1;
-}
-
-.text-8xl{
-  font-size: 6rem;
-  line-height: 1;
 }
 
 .font-bold{
@@ -801,13 +823,53 @@ video {
   background-repeat: no-repeat;
 }
 
+@keyframes wiggle {
+  0% {
+    transform: skewX(9deg);
+  }
+
+  10% {
+    transform: skewX(-8deg);
+  }
+
+  20% {
+    transform: skewX(7deg);
+  }
+
+  30% {
+    transform: skewX(-6deg);
+  }
+
+  40% {
+    transform: skewX(5deg);
+  }
+
+  50% {
+    transform: skewX(-4deg);
+  }
+
+  60% {
+    transform: skewX(3deg);
+  }
+
+  70% {
+    transform: skewX(-2deg);
+  }
+
+  80% {
+    transform: skewX(1deg);
+  }
+
+  90% {
+    transform: skewX(0deg);
+  }
+
+  100% {
+    transform: skewX(0deg);
+  }
+}
+
 .hover\:text-blue-500:hover{
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
-}
-
-@media (min-width: 768px){
-  .md\:w-full{
-    width: 100%;
-  }
 }

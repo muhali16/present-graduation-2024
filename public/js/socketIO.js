@@ -6,6 +6,7 @@ const socket = io();
 
 socket.on("hadir.nama", (item) => {
   namaField.innerText = item;
+  namaField.classList.add('animate-bounce')
 });
 socket.on("hadir.kelas", (item) => {
   classField.innerText = item;
