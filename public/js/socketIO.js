@@ -1,12 +1,17 @@
 const namaField = document.getElementById("studentName");
-const classField = document.getElementById("studentClass");
-const unitField = document.getElementById("studentUnit");
+const welcomeField = document.getElementById("welcomeText");
 
 const socket = io();
 
 socket.on("hadir", (item) => {
+  if (namaField.classList.contains("animation-name")) {
+    namaField.classList.remove("animation-name");
+    welcomeField.classList.replace("hidden", "flex");
+  }
   namaField.innerText = item.nama;
-  classField.innerText = item.kelas;
-  unitField.innerText = item.unit_sekolah;
-  namaField.classList.add('animate-bounce')
+  namaField.classList.add("animation-name");
+  setTimeout(() => {
+    // namaField.classList.remove("animation-name");
+    welcomeField.classList.replace("flex", "hidden");
+  }, 6000);
 });
