@@ -12,8 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "canvas": "^2.11.2",
+    "datatables.net": "^2.0.7",
+    "datatables.net-dt": "^2.0.7",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "jquery": "^3.7.1",
+    "mysql": "^2.18.1",
     "mysql2": "^3.9.7",
     "nodemon": "^3.1.0",
     "qr-code-styling": "^1.6.0-rc.1",

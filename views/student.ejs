@@ -1,29 +1,41 @@
 <%- include('partials/header') %>
-<main class="flex flex-col max-w-md justify-center p-6 gap-5 mx-auto">
-  <h1 class="text-2xl font-bold">Siswa Peserta Lepas Kenang 2024</h1>
-  <table class="table-auto text-md">
-    <thead class="text-center border-t-2 border-b-2 border-black">
-      <td class="p-2">No</td>
-      <td class="p-2 text-left">Name</td>
-      <td class="p-2 text-left">NIS</td>
-      <td class="p-2">Hadir</td>
+<main class="flex flex-col justify-center p-6 gap-5 mx-auto">
+  <h1 class="text-4xl font-bold text-center">Siswa Peserta Lepas Kenang 2024</h1>
+  <table id="studentTable" class="display">
+    <thead>
+      <tr class="border-2">
+        <th>Id</th>
+        <th>Nama</th>
+        <th>Nis</th>
+        <th>Departemen</th>
+        <th>Hadir</th>
+      </tr>
     </thead>
     <tbody>
       <% let i = 1; students.forEach(student => { %>
-      <tr class="border-b-2">
-        <td class="text-center p-2"><%= i %></td>
-        <td class="p-2">
-          <a
-            href="/students/<%= student.nis ?? "#" %>"
-            class="text-blue-900 hover:text-blue-500"
-            ><%= student.nama ?? "Undefined" %></a
-          >
-        </td>
-        <td class="text-center p-2"><%= student.nis %></td>
-        <td class="text-center p-2"><%= student.hadir == 1 ? "✅" : "❌" %></td>
-      </tr>
-      <% i++ }); %>
+        <tr class="border-b-2">
+          <td class="text-center p-2"><%= i %></td>
+          <td class="p-2">
+            <a
+              href="/students/<%= student.nis ?? "#" %>"
+              class="text-blue-900 hover:text-blue-500"
+              ><%= student.nama ?? "Undefined" %></a
+            >
+          </td>
+          <td class="text-center p-2"><%= student.nis %></td>
+          <td class="text-center p-2"><%= student.departemen %></td>
+          <td class="text-center p-2"><%= student.hadir == 1 ? "✅" : "❌" %></td>
+        </tr>
+        <% i++ }); %>
     </tbody>
   </table>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+  <script>
+    $(document).ready(function() {
+        $('#studentTable').DataTable();
+    });
+  </script>
 </main>
 <%- include('partials/footer') %>
