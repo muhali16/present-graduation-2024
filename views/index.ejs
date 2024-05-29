@@ -1,25 +1,16 @@
 <%- include('./partials/header') %>
 <div class="w-full h-screen bg-main bg-cover fixed">
-  <div class="flex flex-col relative gap-10">
-    <div class="pt-5 mx-auto">
-      <h1 class="border-4 border-white text-white text-center text-5xl p-4 font-bold bg-slate-800 rounded-md">Welcome to Graduation Day 🎓</h1>
-    </div>
-    <div>
-      <div class="flex justify-center items-center" >
-        <img class="border-4 border-white rounded-xl" src="/images/foto.jpg" width="250px" height="100px" alt="profile-siswa">
-      </div>
-    </div>
-    <div class="bg-slate-900 py-9 border-4 border-white rounded-md mx-4">
-      <h3
-        id="studentName"
-        class="text-white w-full h-fit text-center text-4xl font-semibold animate-[wiggle_5s_ease-in-out]">Kelvin Aulia Wilson</h3>
-      <h3 
-        id="studentClass" 
-        class="text-white w-full h-fit text-center text-4xl font-semibold">VI - DL</h3>
-      <h3 
-        id="studentUnit" 
-        class="text-white w-full h-fit text-center text-4xl font-semibold">HOMESCHOOLING KAK SETO PUSAT</h3>
-    </div>
+  <div
+    id="welcomeText"
+    class="hidden flex-col justify-center text-center items-center gap-10 h-screen pt-24"
+  >
+    <p class="text-3xl text-[#D59529] dm-serif-display-regular">
+      Selamat Datang,
+    </p>
+    <p
+      id="studentName"
+      class="text-[5rem] text-[#D59529] dm-serif-display-regular animation-name"
+    ></p>
   </div>
 </div>
 
