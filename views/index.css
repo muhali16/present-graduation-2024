@@ -29,7 +29,7 @@
 }
 
 .animation-name {
-  animation: scale 1s ease-in;
+  animation: scale 2s ease-in;
 }
 
 @keyframes scale {

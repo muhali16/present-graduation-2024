@@ -47,8 +47,8 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(443, APP.HOST, () => {
-  console.log("server run at https://" + APP.HOST);
+server.listen(1543, APP.HOST, () => {
+  console.log("server run at https://" + APP.HOST + ":1543");
 });
 
 module.exports = server;
