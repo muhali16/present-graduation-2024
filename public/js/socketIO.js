@@ -4,14 +4,9 @@ const welcomeField = document.getElementById("welcomeText");
 const socket = io();
 
 socket.on("hadir", (item) => {
-  if (namaField.classList.contains("animation-name")) {
-    namaField.classList.remove("animation-name");
-    welcomeField.classList.replace("hidden", "flex");
-  }
-  namaField.innerText = item.nama;
   namaField.classList.add("animation-name");
+  namaField.innerText = item.nama;
   setTimeout(() => {
-    // namaField.classList.remove("animation-name");
-    welcomeField.classList.replace("flex", "hidden");
-  }, 6000);
+    namaField.classList.remove("animation-name");
+  }, 3000);
 });

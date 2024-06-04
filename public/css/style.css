@@ -656,12 +656,12 @@ video {
   border-width: 1px;
 }
 
-.border-b-2{
-  border-bottom-width: 2px;
+.border-2{
+  border-width: 2px;
 }
 
-.border-t-2{
-  border-top-width: 2px;
+.border-b-2{
+  border-bottom-width: 2px;
 }
 
 .border-black{
@@ -734,10 +734,6 @@ video {
   padding-top: 6rem;
 }
 
-.text-left{
-  text-align: left;
-}
-
 .text-center{
   text-align: center;
 }
@@ -752,17 +748,18 @@ video {
   line-height: 2.25rem;
 }
 
-.text-\[6rem\]{
-  font-size: 6rem;
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-\[5rem\]{
+  font-size: 5rem;
 }
 
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-\[5rem\]{
-  font-size: 5rem;
 }
 
 .font-bold{
@@ -806,50 +803,18 @@ video {
 }
 
 .animation-name {
-  animation: scale 2s ease-in-out;
+  animation: scale 1s ease-in;
 }
 
 @keyframes scale {
   0% {
-    animation-timing-function: ease-in;
-    opacity: 0;
-    transform: translateX(250px);
-  }
-
-  38% {
-    animation-timing-function: ease-out;
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  55% {
-    animation-timing-function: ease-in;
-    transform: translateX(68px);
-  }
-
-  72% {
-    animation-timing-function: ease-out;
-    transform: translateX(0);
-  }
-
-  81% {
-    animation-timing-function: ease-in;
-    transform: translateX(32px);
-  }
-
-  90% {
-    animation-timing-function: ease-out;
-    transform: translateX(0);
-  }
-
-  95% {
-    animation-timing-function: ease-in;
-    transform: translateX(8px);
+    transform: scaleX(0);
+    transform-origin: 50% 100%;
   }
 
   100% {
-    animation-timing-function: ease-out;
-    transform: translateX(0);
+    transform: scaleX(1);
+    transform-origin: 50% 100%;
   }
 }
 
