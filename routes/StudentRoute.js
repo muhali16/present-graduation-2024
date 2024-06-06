@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/students", async (req, res) => {
   try {
-    const students = await Student.findAll({ order: [["departemen", "ASC"]] });
+    const students = await Student.findAll({ order: [["hadir", "DESC"]] });
     res.render("student", { title: "Students", students: students });
   } catch (error) {
     console.log(error.message);

@@ -1,6 +1,6 @@
 const APP = {
-  HOST: "192.168.0.106",
-  dbname: "absensi_lepas_kenang",
+  HOST: "192.168.80.168",
+  dbname: "presensi",
 };
 
 module.exports = APP;

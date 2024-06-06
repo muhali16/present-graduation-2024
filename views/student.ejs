@@ -2,41 +2,59 @@
 <main class="flex flex-col justify-center p-6 gap-5 mx-auto">
   <h1 class="text-3xl font-bold text-center">Siswa Peserta Lepas Kenang 2024</h1>
   <button id="exportButton" class="border-2 mx-auto p-2 border-white bg-green-500 text-white rounded-md font-semibold text-sm">Export to Excel</button>
-  <table id="studentTable" class="display">
-    <thead>
-      <tr class="border-2">
-        <th>No</th>
-        <th>Nama</th>
-        <th>NIS</th>
-        <th>Departemen</th>
-        <th>Hadir</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% let i = 1; students.forEach(student => { %>
-        <tr class="border-b-2">
-          <td class="text-center p-2"><%= i %></td>
-          <td class="p-2">
-            <a
-              href="/students/<%= student.nis ?? "#" %>"
-              class="text-blue-900 hover:text-blue-500"
-              ><%= student.nama ?? "Undefined" %></a
-            >
-          </td>
-          <td class="text-center p-2"><%= student.nis %></td>
-          <td class="text-center p-2"><%= student.departemen %></td>
-          <td class="text-center p-2"><%= student.hadir == 1 ? "✅" : "❌" %></td>
+  <div class="overflow-auto">
+    <table id="studentTable" class="display">
+      <thead>
+        <tr class="border-2">
+          <th  data-priority="1">No</th>
+          <th  data-priority="1">Nama</th>
+          <th>NIS</th>
+          <th>Departemen</th>
+          <th>Unit Sekolah</th>
+          <th>Nama Ortu</th>
+          <th>Telp Ortu</th>
+          <th  data-priority="1">Hadir</th>
         </tr>
-        <% i++ }); %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% let i = 1; students.forEach(student => { %>
+          <tr class="border-b-2">
+            <td class="text-center p-2"><%= i %></td>
+            <td class="p-2">
+              <a
+                href="/students/<%= student.nis ?? "#" %>"
+                class="text-blue-900 hover:text-blue-500"
+                ><%= student.nama ?? "Undefined" %></a
+              >
+            </td>
+            <td class="text-center p-2"><%= student.nis %></td>
+            <td class="text-center p-2"><%= student.departemen %></td>
+            <td class="p-2"><%= student.unit_sekolah %></td>
+            <td class="p-2"><%= '' %></td>
+            <td class="p-2"><%= '' %></td>
+            <td class="text-center p-2"><%= student.hadir == 1 ? "✅" : "❌" %></td>
+          </tr>
+          <% i++ }); %>
+      </tbody>
+    </table>
+    
+  </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+  <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
+  <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.dataTables.js"></script>
   <script>
     $(document).ready(function() {
-        const table = $('#studentTable').DataTable();
+        const table = $('#studentTable').DataTable(
+          {
+            responsive: true,
+            columnDefs: [
+                { responsivePriority: 1, targets: 0 },
+            ]
+          }
+        );
 
         $('#exportButton').on('click', function() {
             exportTableToExcel(table, 'Data Kehadiran Lepas Kenang 2024');

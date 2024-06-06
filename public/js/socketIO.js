@@ -1,4 +1,5 @@
 const namaField = document.getElementById("studentName");
+const departementField = document.getElementById("studentDepartement");
 const welcomeField = document.getElementById("welcomeText");
 
 const socket = io();
@@ -6,7 +7,10 @@ const socket = io();
 socket.on("hadir", (item) => {
   namaField.classList.add("animation-name");
   namaField.innerText = item.nama;
+  departementField.classList.add("animation-name");
+  departementField.innerText = item.departemen;
   setTimeout(() => {
     namaField.classList.remove("animation-name");
-  }, 3000);
+    departementField.classList.remove("animation-name");
+  }, 2000);
 });
