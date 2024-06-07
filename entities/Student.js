@@ -8,6 +8,12 @@ const Student = db.define(
   {
     nama: DataTypes.STRING,
     kelas: DataTypes.STRING,
+    ayah: DataTypes.STRING,
+    ibu: DataTypes.STRING,
+    wali: DataTypes.STRING,
+    waayah: DataTypes.BIGINT,
+    waibu: DataTypes.BIGINT,
+    wawali: DataTypes.BIGINT,
     unit_sekolah: DataTypes.STRING,
     nis: {
       type: DataTypes.BIGINT,
@@ -16,8 +22,14 @@ const Student = db.define(
     departemen: DataTypes.STRING,
     hadir: DataTypes.INTEGER,
     aktif: DataTypes.INTEGER,
+    timestamp_hadir: DataTypes.DATE,
   },
-  { freezeTableName: true }
+  {
+    freezeTableName: true,
+    timestamps: true,
+    updatedAt: "timestamp_hadir",
+    createdAt: false,
+  }
 );
 
 module.exports = Student;

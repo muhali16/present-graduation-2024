@@ -1,5 +1,5 @@
 const APP = {
-  HOST: "192.168.0.106",
+  HOST: "192.168.80.190",
   dbname: "absensi_lepas_kenang",
 };
 

@@ -31,7 +31,8 @@ app.get("/scan-present/:nis/success", async (req, res) => {
   const student = await Student.findOne({
     where: { nis: req.params.nis, aktif: 1 },
   });
-  io.emit("hadir", student);
+  io.emit("welcome-text", student);
+  io.emit("student-table", student);
   console.log("Hadir: " + student.nama);
   res.render("show", { title: "Success", data: student });
 });
