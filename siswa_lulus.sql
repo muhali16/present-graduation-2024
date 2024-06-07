@@ -42,7 +42,7 @@ CREATE TABLE `siswa_lulus` (
   `hadir` tinyint DEFAULT '0',
   `aktif` tinyint DEFAULT '1',
   `timestamp_hadir` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `siswa_lulus`
