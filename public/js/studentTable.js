@@ -8,7 +8,10 @@ socket.on("student-table", (item) => {
 });
 
 $(document).ready(function () {
-  const table = $("#studentTable").DataTable();
+  const table = $("#studentTable").DataTable({
+    responsive: true,
+    columnDefs: [{ responsivePriority: 1, targets: 0 }],
+  });
 
   $("#exportButton").on("click", function () {
     exportTableToExcel(table, "Data Kehadiran Lepas Kenang 2024");

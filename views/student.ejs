@@ -2,50 +2,66 @@
 <main class="flex flex-col justify-center p-6 gap-5 mx-auto">
   <h1 class="text-3xl font-bold text-center">Siswa Peserta Lepas Kenang 2024</h1>
   <button id="exportButton" class="border-2 mx-auto p-2 border-white bg-green-500 text-white rounded-md font-semibold text-sm">Export to Excel</button>
-  <table id="studentTable" class="display">
-    <thead>
-      <tr class="border-2">
-        <th>No</th>
-        <th>Nama</th>
-        <th>NIS</th>
-        <th>Departemen</th>
-        <th>Hadir</th>
-        <th>Timestamp</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% let i = 1; students.forEach(student => { %>
-        <tr class="border-b-2">
-          <input type="text" id="studentId" disabled value="<%= student.nis %>" hidden>
-          <td class="text-center p-2"><%= i %></td>
-          <td class="p-2">
-            <a
-              href="/students/<%= student.nis ?? "#" %>"
-              class="text-blue-900 hover:text-blue-500"
-              ><%= student.nama ?? "Undefined" %></a
-            >
-          </td>
-          <td class="text-center p-2"><%= student.nis %></td>
-          <td class="text-center p-2"><%= student.departemen %></td>
-          <td class="text-center p-2" id="hadir-<%= student.nis %>"><%= student.hadir == 1 ? "✅" : "❌" %></td>
-          <td class="p-2">
-            <%= (new Intl.DateTimeFormat('id-ID', {
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric', 
-                  hour: '2-digit', 
-                  minute: '2-digit'
-                  }).format(student.timestamp_hadir)) %>
-          </td>
+  <div class="overflow-auto">
+    <table id="studentTable" class="display">
+      <thead>
+        <tr class="border-2">
+          <th  data-priority="1">No</th>
+          <th  data-priority="1">Nama</th>
+          <th>NIS</th>
+          <th>Departemen</th>
+          <th>Unit Sekolah</th>
+          <th>Ayah</th>
+          <th>Telp Ayah</th>
+          <th>Ibu</th>
+          <th>Telp Ibu</th>
+          <th>Wali</th>
+          <th>Telp Wali</th>
+          <th  data-priority="1">Hadir</th>
+          <th  data-priority="1">Timestamp</th>
         </tr>
-        <% i++ }); %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% let i = 1; students.forEach(student => { %>
+          <tr class="border-b-2">
+            <td class="text-center p-2"><%= i %></td>
+            <td class="p-2">
+              <a
+                href="/students/<%= student.nis ?? "#" %>"
+                class="text-blue-900 hover:text-blue-500"
+                ><%= student.nama ?? "Undefined" %></a
+              >
+            </td>
+            <td class="text-center p-2"><%= student.nis %></td>
+            <td class="text-center p-2"><%= student.departemen %></td>
+            <td class="p-2"><%= student.unit_sekolah %></td>
+            <td class="p-2"><%= student.ayah %></td>
+            <td class="p-2"><%= student.waayah %></td>
+            <td class="p-2"><%= student.ibu %></td>
+            <td class="p-2"><%= student.waibu %></td>
+            <td class="p-2"><%= student.wali %></td>
+            <td class="p-2"><%= student.wawali %></td>
+            <td class="text-center p-2" id="hadir-<%= student.nis%>"><%= student.hadir == 1 ? "✅" : "❌" %></td>
+            <td class="p-2 text-nowrap"><%= new Intl.DateTimeFormat('id-ID', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit',
+          }).format(student.timestamp_hadir) %></td>
+          </tr>
+          <% i++ }); %>
+      </tbody>
+    </table>
+    
+  </div>
   
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+  <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
+  <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.dataTables.js"></script>
   <script src="/js/studentTable.js"></script>
 </main>
 <%- include('partials/footer') %>

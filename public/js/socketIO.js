@@ -1,4 +1,5 @@
 const namaField = document.getElementById("studentName");
+const departementField = document.getElementById("studentDepartement");
 const welcomeField = document.getElementById("welcomeText");
 
 const socket = io();
@@ -9,5 +10,6 @@ socket.on("welcome-text", (item) => {
   console.log(presentField.dataset.studentId);
   setTimeout(() => {
     namaField.classList.remove("animation-name");
-  }, 3000);
+    departementField.classList.remove("animation-name");
+  }, 2000);
 });
