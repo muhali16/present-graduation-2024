@@ -7,4 +7,5 @@ INSERT INTO `siswa_lulus` (`unit_sekolah`, `departemen`, `nis`, `nama`, `kelas`,
 ('Sekolah Kak Seto', 'Direksi', 1600000000, 'Nurhuda Abdillah, M.Pd.', 'SEKOLAH KAK SETO', '0', '0', '0', 0, 0, 0, 0, 1, '2024-06-06 07:09:18'),
 ('Sekolah Kak Seto', 'Direksi', 1700000000, 'Iin Imronah Amelia, S.Pd.I.', 'SEKOLAH KAK SETO', '0', '0', '0', 0, 0, 0, 0, 1, '2024-06-06 07:09:18'),
 ('Sekolah Kak Seto', 'Direksi', 1800000000, 'Ade Rachmat Fikri, M.Pd.', 'SEKOLAH KAK SETO', '0', '0', '0', 0, 0, 0, 0, 1, '2024-06-06 07:09:18'),
-('Sekolah Kak Seto', 'Direksi', 1900000000, 'Adhityo Haryadi, M.Pd.', 'SEKOLAH KAK SETO', '0', '0', '0', 0, 0, 0, 0, 1, '2024-06-06 07:09:18');
+('Sekolah Kak Seto', 'Direksi', 1900000000, 'Adhityo Haryadi, M.Pd.', 'SEKOLAH KAK SETO', '0', '0', '0', 0, 0, 0, 0, 1, '2024-06-06 07:09:18'),
+('Sekolah Kak Seto', 'Direksi', 2000000000, 'Sri Kurnia Nuraeni, S.Pd., M.M.', 'SEKOLAH KAK SETO', '0', '0', '0', 0, 0, 0, 0, 1, '2024-06-06 07:09:18');
